@@ -30,10 +30,10 @@ namespace JREM.API.Rest.Tests.Controllers
                 Id = 7
             };
             //Api/Store/InsProduct
-            var res = controller.InsProduct(product);
+            var res = controller.PostProduct(product);
 
             //Api/Store/UpdateProduct
-            //var res = controller.UpdateProduct(product);
+            //var res = controller.PutProduct(product);
 
             //Api/Store/DeleteProduct
             //var res = controller.DeleteProduct(product);
