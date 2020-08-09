@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0CDFBCFE-992D-46AE-9D3E-4543E5F91ABE}</ProjectGuid>
+    <ProjectGuid>{228B8914-FD54-4A57-9909-3A1D732ADE4F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>JREM.API.Rest.Models</RootNamespace>
-    <AssemblyName>JREM.API.Rest.Models</AssemblyName>
+    <RootNamespace>JREM.API.Rest.Services</RootNamespace>
+    <AssemblyName>JREM.API.Rest.Services</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,9 +44,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PlaceHolder.cs" />
-    <Compile Include="Product.cs" />
+    <Compile Include="ServiceEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JREM.API.Rest.Core\JREM.API.Rest.Core.csproj">
+      <Project>{B8505699-234F-432E-84B3-7E26C8CE4AFB}</Project>
+      <Name>JREM.API.Rest.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JREM.API.Rest.Models\JREM.API.Rest.Models.csproj">
+      <Project>{0CDFBCFE-992D-46AE-9D3E-4543E5F91ABE}</Project>
+      <Name>JREM.API.Rest.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

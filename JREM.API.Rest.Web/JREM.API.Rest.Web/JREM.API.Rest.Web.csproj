@@ -270,6 +270,10 @@
       <Project>{0cdfbcfe-992d-46ae-9d3e-4543e5f91abe}</Project>
       <Name>JREM.API.Rest.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\JREM.API.Rest.Services\JREM.API.Rest.Services.csproj">
+      <Project>{228B8914-FD54-4A57-9909-3A1D732ADE4F}</Project>
+      <Name>JREM.API.Rest.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -5,6 +5,7 @@ using JREM.API.Rest.Core;
 using JREM.API.Rest.Models;
 using JREM.API.Rest.Logic;
 using System.Collections.Generic;
+using JREM.API.Rest.Services;
 
 namespace JREM.API.Rest.Web.Controllers
 {    
@@ -126,6 +127,30 @@ namespace JREM.API.Rest.Web.Controllers
                 return new MethodResponse<string>() { Code = -1, Message = "Ocurrio un error al eliminar los productos: " + ex.Message };
             }
         }
+
+        [Route("Api/PlaceHolder/GetPlaceHolder/{id}")]
+        public MethodResponse<PlaceHolder> GetJsonPlaceHolder(string id)
+        {
+            var response = new MethodResponse<PlaceHolder>();
+            try
+            {
+                var serviceEngine = new ServiceEngine();
+                var data = serviceEngine.GetJsonPlaceHolder(id);
+
+                if(int.Parse(data.Code.ToString()) != 0)
+                {
+                    return new MethodResponse<PlaceHolder>() { Code = data.Code, Message = data.Message };
+                }
+                response = data;
+
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return new MethodResponse<PlaceHolder>() { Code = -1, Message = "Ocurrio un error en api JsonPlaceHolder: " + ex.Message };
+            }
+        }
+
 
     }
 }

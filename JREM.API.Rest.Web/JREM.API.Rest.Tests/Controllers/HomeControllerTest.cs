@@ -17,7 +17,7 @@ namespace JREM.API.Rest.Tests.Controllers
             StoreController controller = new StoreController();
             // Actuar
 
-            //Api/Store/GetAllProducts
+            //AGetAllProducts
             //var res = controller.GetAllProducts();
 
             var product = new Product()
@@ -29,13 +29,13 @@ namespace JREM.API.Rest.Tests.Controllers
                 Stock = 50,
                 Id = 7
             };
-            //Api/Store/InsProduct
+            //PostProduct
             var res = controller.PostProduct(product);
 
-            //Api/Store/UpdateProduct
+            //PutProduct
             //var res = controller.PutProduct(product);
 
-            //Api/Store/DeleteProduct
+            //DeleteProduct
             //var res = controller.DeleteProduct(product);
         }
 

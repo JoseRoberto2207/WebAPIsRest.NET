@@ -15,7 +15,8 @@ namespace JREM.API.Rest.Data
             var response = new MethodResponse<DataSet>();
             try
             {
-                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ToString()))
+                //using (var Conn = new SqlConnection("Data Source=LAPTOP-3NQVU8F1\\SQLEXPRESS;Initial Catalog=Store;Integrated Security=True;"))
+                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
                 {
                     conn.Open();
 
@@ -44,7 +45,7 @@ namespace JREM.API.Rest.Data
             {
                 var data = (Product)product;
 
-                using (var Conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ToString()))
+                using (var Conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
                 {
                     Conn.Open();
                     
@@ -81,7 +82,7 @@ namespace JREM.API.Rest.Data
             {
                 var data = (Product)product;
 
-                using (var Conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ToString()))
+                using (var Conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
                 {
                     Conn.Open();
 
@@ -119,7 +120,7 @@ namespace JREM.API.Rest.Data
             {
                 var data = (Product)product;
 
-                using (var Conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ToString()))
+                using (var Conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
                 {
                     Conn.Open();
 

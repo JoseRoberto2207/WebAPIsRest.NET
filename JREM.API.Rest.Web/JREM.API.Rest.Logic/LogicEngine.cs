@@ -30,11 +30,9 @@ namespace JREM.API.Rest.Logic
                             Precio = double.Parse(dr["Precio"].ToString()),
                             Stock = int.Parse(dr["Stock"].ToString())
                         };
-
                         listProducts.Add(products);
                     }
                 }
-
                 response.Code = 0;
                 response.Result = listProducts;
 
@@ -73,13 +71,11 @@ namespace JREM.API.Rest.Logic
                             lstproduct.Add(product);
                         }
                     }
-                }                
-
+                }
                 if (lstproduct.Count == 0)
                 {
                     return new MethodResponse<Product>() { Code = -1, Message = "No existe el producto con ese nombre" };
                 }
-
                 response.Code = 0;
                 response.Result = lstproduct;
 
