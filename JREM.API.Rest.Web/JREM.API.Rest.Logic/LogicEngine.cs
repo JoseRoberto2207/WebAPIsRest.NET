@@ -34,14 +34,14 @@ namespace JREM.API.Rest.Logic
                     }
                 }
                 response.Code = 0;
-                response.Result = listProducts;
-
-                return response;
+                response.Result = listProducts;                
             }
             catch (Exception ex)
-            {
-                return new MethodResponse<List<Product>>() { Code = -1, Message = "Error al procesar los datos: " + ex.Message };
-            }            
+            {                
+                response.Code = -1;
+                response.Message = $"DataConversionError: {ex.Message}";               
+            }
+            return response;
         }
 
         public MethodResponse<Product> GetProductByName(string nombre)
@@ -78,13 +78,13 @@ namespace JREM.API.Rest.Logic
                 }
                 response.Code = 0;
                 response.Result = lstproduct;
-
-                return response;
             }
             catch (Exception ex)
-            {
-                return new MethodResponse<Product>() { Code = -1, Message = "Error al procesar los datos: " + ex.Message };
+            {                
+                response.Code = -1;
+                response.Message = $"DataConversionError: {ex.Message}";               
             }
+            return response;
         }
 
         public MethodResponse<string> InsProduct(object infoProduct)
@@ -105,13 +105,13 @@ namespace JREM.API.Rest.Logic
                 }
                 response.Code = 0;
                 response.Message = "Se inserto correctamente el producto";
-
-                return response;
             }
             catch (Exception ex)
-            {
-                return new MethodResponse<string>() { Code = -1, Message = "Error al procesar los datos: " + ex.Message};
+            {                
+                response.Code = -1;
+                response.Message = $"DataConversionError: {ex.Message}";               
             }
+            return response;
         }
 
         public MethodResponse<string> UpdateProduct(object infoProduct)
@@ -128,13 +128,13 @@ namespace JREM.API.Rest.Logic
                 }
                 response.Code = 0;
                 response.Message = "Se actualizo correctamente el producto";
-
-                return response;
             }
             catch (Exception ex)
-            {
-                return new MethodResponse<string>() { Code = -1, Message = "Error al procesar los datos: " + ex.Message };
+            {                
+                response.Code = -1;
+                response.Message = $"DataConversionError: {ex.Message}";               
             }
+            return response;
         }
 
         public MethodResponse<string> DeleteProduct(object infoProduct)
@@ -151,13 +151,13 @@ namespace JREM.API.Rest.Logic
                 }
                 response.Code = 0;
                 response.Message = "Se elimino correctamente el producto";
-
-                return response;
             }
             catch (Exception ex)
-            {
-                return new MethodResponse<string>() { Code = -1, Message = "Error al procesar los datos: " + ex.Message };
+            {                
+                response.Code = -1;
+                response.Message = $"DataConversionError: {ex.Message}";               
             }
+            return response;
         }
     }
 }
